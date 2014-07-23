@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.yarenty.flatfile</groupId>
+    <artifactId>examiner</artifactId>
+    <version>1.0</version>
+    <packaging>pom</packaging>
+
+    <properties>
+
+        <examinerVersion>1.0</examinerVersion>
+        <earPluginVersion>2.9.1</earPluginVersion>
+        <ejbPluginVersion>2.3</ejbPluginVersion>
+        <complierPluginVersion>3.1</complierPluginVersion>
+        <javadocPluginVersion>2.9.1</javadocPluginVersion>
+    </properties>
+
+
+    <modules>
+        <module>modules</module>
+        <module>source</module>
+        <module>ejbs</module>
+        <module>web</module>
+        <module>ear</module>
+    </modules>
+
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-framework-bom</artifactId>
+                <version>4.0.6.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.jboss.as</groupId>
+                <artifactId>jboss-as-ejb-client-bom</artifactId>
+                <version>7.2.0.Final</version>
+                <type>pom</type>
+                <scope>compile</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.yarenty.rememome</groupId>
+                <artifactId>logging</artifactId>
+                <version>${rememomeVersion}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.yarenty.rememome</groupId>
+                <artifactId>model</artifactId>
+                <version>${rememomeVersion}</version>
+            </dependency>
+        </dependencies>
+
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.7.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>4.3.1.Final</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.14</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>javax.ejb</groupId>
+            <artifactId>ejb-api</artifactId>
+            <version>3.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+
+        <!--
+                <dependency>
+                    <groupId>org.jboss.ejb3</groupId>
+                    <artifactId>jboss-ejb3-ext-api</artifactId>
+                    <version>1.0.0</version>
+
+                </dependency>
+
+                -->
+
+        <!--
+                <dependency>
+                    <groupId>org.jboss.javaee</groupId>
+                    <artifactId>jboss-ejb-api</artifactId>
+                    <version>3.0.0.GA</version>
+                </dependency>
+
+        -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+
+</project>

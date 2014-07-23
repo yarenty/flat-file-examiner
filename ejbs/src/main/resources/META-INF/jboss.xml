@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<enterprise-beans>
+
+    <ejb-name>Hello</ejb-name>
+    <jndi-name>HelloEJB</jndi-name>
+
+</enterprise-beans>

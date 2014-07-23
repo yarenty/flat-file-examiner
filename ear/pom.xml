@@ -1,0 +1,64 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.yarenty.flatfile</groupId>
+    <artifactId>ear</artifactId>
+    <packaging>ear</packaging>
+    <version>1.0</version>
+    <name>ear assembly</name>
+    <parent>
+        <groupId>com.yarenty.flatfile</groupId>
+        <artifactId>examiner</artifactId>
+        <version>1.0</version>
+    </parent>
+    <dependencies>
+        <dependency>
+            <groupId>com.yarenty.flatfile</groupId>
+            <artifactId>ejbs</artifactId>
+            <version>${examinerVersion}</version>
+            <type>ejb</type>
+        </dependency>
+        <dependency>
+            <groupId>com.yarenty.flatfile.web</groupId>
+            <artifactId>servlet</artifactId>
+            <version>${examinerVersion}</version>
+            <type>war</type>
+        </dependency>
+        <dependency>
+            <groupId>com.yarenty.flatfile</groupId>
+            <artifactId>source</artifactId>
+            <version>${examinerVersion}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.yarenty.flatfile.modules</groupId>
+            <artifactId>logging</artifactId>
+            <version>${examinerVersion}</version>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-ear-plugin</artifactId>
+                <version>${earPluginVersion}</version>
+                <configuration>
+                    <!-- adding beans.xml for CDI compliance -->
+                    <earSourceDirectory>./src/main/resources</earSourceDirectory>
+
+                    <!-- to set expected context root-->
+                    <modules>
+                        <webModule>
+                            <groupId>com.yarenty.flatfile.web</groupId>
+                            <artifactId>servlet</artifactId>
+                            <contextRoot>/ffe</contextRoot>
+                        </webModule>
+                    </modules>
+
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

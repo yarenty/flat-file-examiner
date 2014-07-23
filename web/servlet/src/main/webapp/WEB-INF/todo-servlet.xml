@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+
+    <!-- test application data - to be replaced with DB! -->
+    <!--
+        <bean id="product1" class="com.yarenty.domain.Note">
+            <property name="title" value="Lamp" />
+            <property name="description" value="Very nice lamp" />
+        </bean>
+
+        <bean id="product2" class="com.yarenty.domain.Note">
+            <property name="title" value="Table" />
+            <property name="description" value="some Table" />
+        </bean>
+
+        <bean id="product3" class="com.yarenty.domain.Note">
+            <property name="title" value="Chair" />
+            <property name="description" value=" and Chair" />
+        </bean>
+
+
+    -->
+
+    <bean id="messageSource"
+          class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename" value="messages"/>
+    </bean>
+
+
+    <!-- the application context definition for the springapp DispatcherServlet -->
+
+    <bean name="/hello.htm" class="com.yarenty.flatfile.jsp.HelloController"/>
+    <!--
+        <bean name="/inventory.htm" class="com.yarenty.web.InventoryController">
+            <property name="noteManager" ref="noteManager"></property>
+        </bean>
+
+        <bean name="/index.htm" class="com.yarenty.spring.IndexController" />
+
+    -->
+    <!--  and now some form to edit ... something ;-) - at the start just title -->
+
+    <!--
+     <bean name="/edit.htm" class="com.yarenty.web.ChangeTitleFormController">
+         <property name="sessionForm" value="true"/>
+         <property name="commandName" value="changeTitle"/>
+         <property name="commandClass" value="com.yarenty.service.ChangeTitle"/>
+         <property name="validator">
+             <bean class="com.yarenty.service.ChangeTitleValidator"/>
+         </property>
+         <property name="formView" value="edit"/>
+         <property name="successView" value="index.htm"/>
+         <property name="noteManager" ref="noteManager"/>
+     </bean>
+
+ -->
+    <!-- instead  every time specify full path of view - here we will have all
+        of them in one directory so prefix and suffix will be added -->
+
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass"
+                  value="org.springframework.web.servlet.view.JstlView"></property>
+        <property name="prefix" value="/WEB-INF/jsp/"></property>
+        <property name="suffix" value=".jsp"></property>
+    </bean>
+
+</beans>

@@ -1,0 +1,44 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.yarenty.flatfile</groupId>
+    <artifactId>ejbs</artifactId>
+    <packaging>ejb</packaging>
+    <name>enterprise java beans</name>
+    <parent>
+        <groupId>com.yarenty.flatfile</groupId>
+        <artifactId>examiner</artifactId>
+        <version>1.0</version>
+    </parent>
+    <dependencies>
+        <dependency>
+            <groupId>com.yarenty.flatfile</groupId>
+            <artifactId>source</artifactId>
+            <version>${examinerVersion}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.yarenty.flatfile.modules</groupId>
+            <artifactId>logging</artifactId>
+            <version>${examinerVersion}</version>
+            <scope>compile</scope>
+        </dependency>
+
+
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-ejb-plugin</artifactId>
+                <version>${ejbPluginVersion}</version>
+
+                <configuration>
+                    <jarName>calendarEJB</jarName>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

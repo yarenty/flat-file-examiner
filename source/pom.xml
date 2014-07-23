@@ -1,0 +1,44 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.yarenty.flatfile</groupId>
+    <artifactId>source</artifactId>
+    <packaging>jar</packaging>
+    <name>core project classes</name>
+    <parent>
+        <groupId>com.yarenty.flatfile</groupId>
+        <artifactId>examiner</artifactId>
+        <version>1.0</version>
+    </parent>
+    <dependencies>
+        <dependency>
+            <groupId>com.yarenty.flatfile.modules</groupId>
+            <artifactId>logging</artifactId>
+            <version>${examinerVersion}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.yarenty.flatfile.modules</groupId>
+            <artifactId>model</artifactId>
+            <version>${examinerVersion}</version>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${complierPluginVersion}</version>
+                <configuration>
+                    <encoding>iso-8859-1</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>${javadocPluginVersion}</version>
+                <configuration>
+                    <minmemory>128m</minmemory>
+                    <maxmemory>512m</maxmemory>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

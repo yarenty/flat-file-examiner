@@ -1,0 +1,11 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.yarenty.flatfile.modules</groupId>
+    <artifactId>logging</artifactId>
+    <name>logging</name>
+    <parent>
+        <groupId>com.yarenty.flatfile</groupId>
+        <artifactId>modules</artifactId>
+        <version>1.0</version>
+    </parent>
+</project>

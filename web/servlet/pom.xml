@@ -1,0 +1,31 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.yarenty.flatfile.web</groupId>
+    <artifactId>servlet</artifactId>
+    <packaging>war</packaging>
+    <name>ffe</name>
+    <parent>
+        <groupId>com.yarenty.flatfile</groupId>
+        <artifactId>web</artifactId>
+        <version>1.0</version>
+    </parent>
+    <dependencies>
+        <dependency>
+            <groupId>com.yarenty.flatfile</groupId>
+            <artifactId>source</artifactId>
+            <scope>provided</scope>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.yarenty.flatfile</groupId>
+            <artifactId>ejbs</artifactId>
+            <scope>provided</scope>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+    </dependencies>
+</project>

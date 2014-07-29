@@ -16,7 +16,8 @@
         <load-on-startup>1</load-on-startup>
     </servlet>
 
-    <servlet-mapping>
+
+     <servlet-mapping>
         <servlet-name>ffe</servlet-name>
         <url-pattern>*.htm</url-pattern>
     </servlet-mapping>
@@ -29,4 +30,7 @@
         <welcome-file>default.htm</welcome-file>
         <welcome-file>default.jsp</welcome-file>
     </welcome-file-list>
+
+
+
 </web-app>

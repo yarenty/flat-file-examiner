@@ -21,6 +21,7 @@ import java.util.Properties;
 public class HelloController implements Controller {
 
     protected final Log logger = LogFactory.getLog(getClass());
+
     @EJB(name = "TasksBeans")
     private Tasks tasks;
 
@@ -71,8 +72,10 @@ public class HelloController implements Controller {
         List<Task> listTask = tasks.getTodayTasks();
 
         StringBuilder sb = new StringBuilder();
-        for (Task task : listTask) {
-            sb.append(task.getId()).append(":").append(task.getDescription()).append("\n");
+        if (listTask!=null) {
+            for (Task task : listTask) {
+                sb.append(task.getId()).append(":").append(task.getDescription()).append("\n");
+            }
         }
 
         return sb.toString();
@@ -87,10 +90,10 @@ public class HelloController implements Controller {
             logger.info(">>" + list.next().getName());
         }
 
-        list = ctx.list("*");
-        while (list.hasMore()) {
-            logger.info("->" + list.next().getName());
-        }
+//        list = ctx.list("*");
+//        while (list.hasMore()) {
+//            logger.info("->" + list.next().getName());
+//        }
 
         listContext(ctx, "+");
 
